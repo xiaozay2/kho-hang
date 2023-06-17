@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Inventory Management</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <h1>Inventory Management</h1>
+
+    <?php
+    // Define inventory data
+    $inventory = [
+        ['2023-06-01', 100, '2023-06-05'],
+        ['2023-06-03', 50, '2023-06-07'],
+        ['2023-06-05', 80, '2023-06-10'],
+        ['2023-06-07', 120, ''],
+    ];
+    ?>
+
+    <table>
+        <tr>
+            <th>Date of Entry</th>
+            <th>Quantity</th>
+            <th>Date of Exit</th>
+        </tr>
+        <?php foreach ($inventory as $item) { ?>
+            <tr>
+                <td><?php echo $item[0]; ?></td>
+                <td><?php echo $item[1]; ?></td>
+                <td><?php echo $item[2] ? $item[2] : '-'; ?></td>
+            </tr>
+        <?php } ?>
+    </table>
+</body>
+</html>
